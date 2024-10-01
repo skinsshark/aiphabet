@@ -54,13 +54,18 @@ export default function Index() {
 
   return (
     <>
-      <div>
+      <div className="md:text-balance">
         <h1 className="font-normal text-2xl">AIPHABET</h1>
-        <p className="w-full lg:w-4/5">
-          A free, printable zine inspired by the idea that &#34;alphabet&#34;
-          looks like it starts with the letters &#34;AI&#34;. This project was
-          created using Stable Diffusion, and its understanding of the English
-          alphabet as hand gestures.
+        <p className="w-full lg:w-4/5 ">
+          Sharon Zheng is an artist who works across the digital and physical
+          spaces, using tech to create art.
+        </p>
+
+        <p className="w-full lg:w-4/5 mb-8">
+          Aiphabet is a free, printable zine inspired by the idea that
+          &#34;alphabet&#34; looks like it starts with the letters &#34;AI&#34;.
+          This project was created using Stable Diffusion and its understanding
+          of the English alphabet as hand gestures.
         </p>
       </div>
       {actionData?.success && actionData?.downloadToken ? (
@@ -97,6 +102,11 @@ export default function Index() {
           </Form>
         </>
       )}
+      <img
+        src="/xx.png"
+        alt="Aiphabet"
+        className="hidden sm:block absolute bottom-0 right-4 w-1/3"
+      />
     </>
   );
 }
