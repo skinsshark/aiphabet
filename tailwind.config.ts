@@ -1,9 +1,15 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 export default {
-  content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
+  content: ['./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        mobile: {
+          raw: '(max-height: 725px) and (max-width:400px)',
+        },
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

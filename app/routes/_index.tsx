@@ -58,7 +58,7 @@ export default function Index() {
         <h1 className="font-normal text-2xl">AIPHABET</h1>
         <p className="w-full lg:w-4/5 ">
           Sharon Zheng is an artist who works across the digital and physical
-          spaces, using tech to create art.
+          spaces, using tech to share art.
         </p>
 
         <p className="w-full lg:w-4/5 mb-8">
@@ -102,11 +102,9 @@ export default function Index() {
           </Form>
         </>
       )}
-      <img
-        src="/xx.png"
-        alt="Aiphabet"
-        className="hidden sm:block absolute bottom-0 right-4 w-1/3"
-      />
+      <div className="-z-50 flex justify-center w-full sm:w-1/3 absolute mobile:top-[94svh] mobile:bottom-auto bottom-0 left-0 sm:top-auto sm:left-auto sm:right-0">
+        <img src="/xx.png" alt="Aiphabet" className="w-4/5 sm:w-full block" />
+      </div>
     </>
   );
 }
