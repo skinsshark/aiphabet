@@ -62,7 +62,7 @@ export default function Index() {
         </p>
 
         <p className="w-full lg:w-4/5 mb-0 sm:mb-2">
-          Aiphabet is a free, printable zine inspired by the idea that
+          Aiphabet is a free, printable zine inspired by the idea that the word
           &#34;alphabet&#34; looks like it starts with the letters &#34;AI&#34;.
           This project was created using Stable Diffusion and its understanding
           of the English alphabet as hand gestures.

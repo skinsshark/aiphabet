@@ -8,6 +8,8 @@ import {
 } from '@remix-run/react';
 import './tailwind.css';
 
+import { Analytics } from '@vercel/analytics/react';
+
 export const meta: MetaFunction = () => {
   return [
     { charSet: 'utf-8' },
@@ -27,6 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );
