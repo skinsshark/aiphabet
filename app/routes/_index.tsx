@@ -3,6 +3,8 @@ import { json, ActionFunction } from '@remix-run/node';
 import { saveEmail, generateDownloadToken } from '~/utils/server.utils';
 import { useEffect, useState } from 'react';
 
+import ReactGA from 'react-ga4';
+
 type ActionData = {
   error?: string;
   success?: boolean;
@@ -17,10 +19,22 @@ export const action: ActionFunction = async ({
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (email === '') {
+    if (typeof window !== 'undefined') {
+      ReactGA.event({
+        category: 'user-action',
+        action: 'totally-blank',
+      });
+    }
     return json<ActionData>({
       error: `You didn't write anything`,
     });
   } else if (typeof email !== 'string' || !emailRegex.test(email)) {
+    if (typeof window !== 'undefined') {
+      ReactGA.event({
+        category: 'user-action',
+        action: 'fake-email-alert',
+      });
+    }
     return json<ActionData>({
       error: `We both know that's not a real email address`,
     });
@@ -31,6 +45,12 @@ export const action: ActionFunction = async ({
     const downloadToken = await generateDownloadToken();
     return json<ActionData>({ success: true, downloadToken });
   } catch (error) {
+    if (typeof window !== 'undefined') {
+      ReactGA.event({
+        category: 'user-action',
+        action: 'smth-went-wrong',
+      });
+    }
     return json<ActionData>({
       error: 'Hmmm something went wrong... refresh and try again?',
     });
@@ -72,6 +92,9 @@ export default function Index() {
         <a
           href={`/download-pdf/${actionData.downloadToken}`}
           className="no-underline"
+          onClick={() => {
+            console.log('hi');
+          }}
         >
           Click here to download AIPHABET Files
         </a>

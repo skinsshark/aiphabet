@@ -19,7 +19,8 @@
     "google-spreadsheet": "^4.1.4",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-ga4": "^2.1.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.12.0",

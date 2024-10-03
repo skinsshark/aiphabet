@@ -9,6 +9,8 @@ import {
 import './tailwind.css';
 
 import { Analytics } from '@vercel/analytics/react';
+import ReactGA from 'react-ga4';
+import { useEffect } from 'react';
 
 export const meta: MetaFunction = () => {
   return [
@@ -36,5 +38,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  useEffect(() => {
+    ReactGA.initialize(import.meta.env.VITE_GA4_ID);
+  }, []);
+
   return <Outlet />;
 }
